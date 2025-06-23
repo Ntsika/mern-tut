@@ -11,7 +11,7 @@ const mindfulnessActivitySchema = new mongoose.Schema(
             required: true,
         },
         time: {
-            type: dateTime,
+            type: Date,
             required: true,
         },
     },
@@ -20,5 +20,5 @@ const mindfulnessActivitySchema = new mongoose.Schema(
 	}
 )
 
-const contactRequest = mongoose.model("User", userSchema);
-module.exports = contactRequestSchema;
+const mindfulnessActivity = mongoose.model("mindfulnessActivity", mindfulnessActivitySchema);
+module.exports = mindfulnessActivity;
