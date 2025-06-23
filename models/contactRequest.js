@@ -10,8 +10,11 @@ const contactRequestSchema = new mongoose.Schema(
 			type: String,
 			required: true,
 		},
-    }
+    },
+	{
+		timestamps: true, // Automatically manage createdAt and updatedAt fields
+	}
 )
 
-const contactRequest = mongoose.model("User", userSchema);
-module.exports = contactRequestSchema;
+const contactRequest = mongoose.model("contactRequest", contactRequestSchema);
+module.exports = contactRequest;

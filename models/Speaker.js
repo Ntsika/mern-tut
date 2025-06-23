@@ -14,8 +14,11 @@ const speakerSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-    }
+    },
+	{
+		timestamps: true, // Automatically manage createdAt and updatedAt fields
+	}
 )
 
-const User = mongoose.model("User", userSchema);
-module.exports = User;
+const speaker = mongoose.model("Speaker", speakerSchema);
+module.exports = speaker;

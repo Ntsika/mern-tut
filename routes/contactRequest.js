@@ -1,21 +1,21 @@
 const express = require('express');
-const contactRequestController = require('../controllers/contactRequest');
+const contactRequestController = require('../controllers/contactRequestController');
 
 const router = express.Router();
 
 // Create a new contact request
-router.post('/', contactRequestController.createContactRequest);
+router.post('/createContactRequest', contactRequestController.createContactRequest);
 
 // Get all contact requests
-router.get('/', contactRequestController.getAllContactRequests);
+router.get('/getAllContactRequest', contactRequestController.getAllContactRequests);
 
 // Get a single contact request by ID
-router.get('/:id', contactRequestController.getContactRequestById);
+router.get('/getContactRequestById:id', contactRequestController.getContactRequestById);
 
 // Update a contact request by ID
-router.put('/:id', contactRequestController.updateContactRequest);
+router.put('updateContactRequestById/:id', contactRequestController.updateContactRequest);
 
 // Delete a contact request by ID
-router.delete('/:id', contactRequestController.deleteContactRequest);
+router.delete('/deleteContactRequestById:id', contactRequestController.deleteContactRequest);
 
 module.exports = router;

@@ -11,8 +11,16 @@ connectDB();
 app.get("/", (req, res) => res.send("API running"));
 
 // define routes
-const userRoutes = require("./routes/user");
-app.use("/api/users", userRoutes);
+//const userRoutes = require("./routes/user");
+const summitRoutes = require("./routes/summit");
+const speakerRoutes = require("./routes/speaker");
+const mindfulnessActivityRoutes = require("./routes/mindfulnessActivity");
+const contactRequestRoutes = require("./routes/contactRequest");
+//app.use("/api/users", userRoutes);
+app.use("/api/summits", summitRoutes);
+app.use("/api/speakers", speakerRoutes);
+app.use("/api/mindfulness-activities", mindfulnessActivityRoutes);
+app.use("/api/contact-requests", contactRequestRoutes);
 
 const PORT = process.env.PORT || 5000;
 
